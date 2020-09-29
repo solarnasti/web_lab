@@ -10,8 +10,8 @@ function IntegerOrNot (num){
 }
 
 function findFirstNotRepeating (str) {
-    for (var i = 0; i < str.length; i++) {
-        var symbol = str.charAt(i); //возвращает символ по указанному индексу строки
+    for (let i = 0; i < str.length; i++) {
+        let symbol = str.charAt(i); //возвращает символ по указанному индексу строки
         if (str.indexOf(symbol) == i && str.indexOf(symbol, i + 1) == -1) { //символ с номером i не имеет совпадения со следующим
             return symbol
         }
