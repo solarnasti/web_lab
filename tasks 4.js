@@ -5,14 +5,20 @@ function firstDecapital (str){
 }
 
 function IntegerOrNot (num){
-    num = Number.parseFloat(num);
-    return Number.isInteger(num);
+    let reg = new RegExp(/^\d+$/)
+    if (num.match(reg) === num) {
+        num = Number.parseFloat(num);
+        return Number.isInteger(num);
+    }
+    else{
+        return false;
+    }
 }
 
 function findFirstNotRepeating (str) {
-    for (var i = 0; i < str.length; i++) {
-        var symbol = str.charAt(i); //возвращает символ по указанному индексу строки
-        if (str.indexOf(symbol) == i && str.indexOf(symbol, i + 1) == -1) { //символ с номером i не имеет совпадения со следующим
+    for (let i = 0; i < str.length; i++) {
+        let symbol = str.charAt(i);
+        if (str.indexOf(symbol) === i && str.indexOf(symbol, i + 1) === -1) { //символ с номером i не имеет совпадения со следующим
             return symbol
         }
     }
