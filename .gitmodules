@@ -1,0 +1,3 @@
+[submodule "web_lab1"]
+	path = web_lab1
+	url = https://github.com/solarnasti/web_lab/web_lab1
