@@ -19,7 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="871f35bd-2ba0-4700-b0d8-2ead0533ad8a" name="Default Changelist" comment="" />
+    <list default="true" id="871f35bd-2ba0-4700-b0d8-2ead0533ad8a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/home.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/web_lab2/views/home.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/footer.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/web_lab2/views/partials/footer.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/menu.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/web_lab2/views/partials/menu.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/task.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/web_lab2/views/partials/task.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/task1.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/web_lab2/views/task1.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/task2.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/web_lab2/views/task2.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/task3.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/web_lab2/views/task3.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/task_result.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/web_lab2/views/task_result.hbs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
