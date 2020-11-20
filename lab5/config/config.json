@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "solarnasti",
+    "password": "secret",
+    "database": "nasti_database",
+    "host": "db",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "solarnasti",
+    "password": "secret",
+    "database": "nasti_database",
+    "host": "db",
+    "dialect": "postgres"
+
+  },
+  "production": {
+    "username": "solarnasti",
+    "password": "secret",
+    "database": "nasti_database",
+    "host": "db",
+    "dialect": "postgres"
+  }
+}
