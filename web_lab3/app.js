@@ -6,6 +6,11 @@ const PORT = 3000
 const fs = require('fs');
 const hbs = require("hbs");
 
+const request=require('request');
+request.defaults({pool:{
+        maxSockets: Infinity
+    }});
+
 ////////////////////////////АУТЕНТИФИКАЦИЯ/////////////////////////
 
 // Подключение MongoDB и Mongoose
@@ -28,7 +33,7 @@ let passport = require('passport');
 let initPassport = require('./passport/session_cookie');
 initPassport(passport);
 
-// Конфигуринг Passport
+// Configuring Passport
 app.use(express.static('public'));
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');

@@ -1,14 +1,6 @@
 let express = require('express');
 let router = express.Router();
 
-let isAuthenticated = function (req, res, next) {
-    // Если пользователь прошел аутентификацию, выполняется метод next()
-    if (req.isAuthenticated())
-        return next();
-    // иначе перенаправление на вход
-    res.redirect('/');
-}
-
 module.exports = function(passport){
 
     // Получение страницы авторизации
