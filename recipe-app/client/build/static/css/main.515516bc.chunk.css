@@ -1,0 +1,2 @@
+.ingredient-cards{display:grid;grid-template-columns:repeat(4,1fr);grid-gap:1rem}.removable-card{position:relative}.remove-button{position:absolute;top:-1px;right:-1px;border-radius:0 .25rem}.recipe-card{display:grid;grid-template-columns:1fr 3fr;grid-gap:1rem}.recipe-img{width:100%}.recipe-card-body{display:flex;flex-direction:column;justify-content:center}
+/*# sourceMappingURL=main.515516bc.chunk.css.map */
