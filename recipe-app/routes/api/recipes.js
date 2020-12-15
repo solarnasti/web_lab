@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const Recipe = require('../../models/Recipe');
 
-router.get('/', async (req, res) => {
+router.get('/', async (_, res) => {
     try {
         const recipes = await Recipe.find().populate('ingredients.ingredient', [
             '_id',

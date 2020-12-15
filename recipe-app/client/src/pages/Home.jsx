@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 
 import Spinner from '../components/Spinner';
 import Ingredient from '../components/Ingredient';
+import RecipeList from './RecipeList';
 import {
     getIngredients,
     addIngredient,
@@ -84,6 +85,7 @@ const Home = ({
                     </div>
                 </>
             )}
+            <RecipeList selectedIngredients={selectedIngredients} />
         </>
     );
 };

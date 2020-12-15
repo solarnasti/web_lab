@@ -13,7 +13,7 @@ const Ingredient = ({
     >
         <Card.Img
             variant="top"
-            src={`/${enName}.jpg`}
+            src={`/img/${enName}.jpg`}
             alt={name}
             title={name}
         />
