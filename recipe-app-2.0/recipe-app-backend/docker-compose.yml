@@ -1,0 +1,24 @@
+version: "3"
+volumes:
+  project: { }
+services:
+  web_application:
+    build: ""
+    command: yarn start
+    depends_on:
+      - db
+    ports:
+      - 5000:5000
+    links:
+      - db
+  db:
+    image: postgres
+    ports:
+      - 5432:5432
+    restart: always
+    volumes:
+      - project:/home/solarnasti/"Рабочий стол"/temp/"recipe-app-2.0"/recipe-app-backend
+    environment:
+      POSTGRES_USER: nastia_user
+      POSTGRES_PASSWORD: chocolate_password
+      POSTGRES_DB: shop_database

@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "nastia_user",
+    "password": "chocolate_password",
+    "database": "shop_database",
+    "host": "db",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "nastia_user",
+    "password": "chocolate_password",
+    "database": "shop_database",
+    "host": "db",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "nastia_user",
+    "password": "chocolate_password",
+    "database": "shop_database",
+    "host": "db",
+    "dialect": "postgres"
+  }
+}

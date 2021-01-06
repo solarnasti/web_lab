@@ -1,0 +1,31 @@
+$grid-gap: 1rem;
+
+.ingredient-card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: $grid-gap;
+}
+
+.recipe {
+  &-card {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: $grid-gap;
+  }
+
+  &-img {
+    width: 100%;
+  }
+
+  &-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.removable-button {
+  position: absolute;
+  right: -1px;
+}
+
