@@ -13,20 +13,15 @@ class RecipeList extends React.Component {
         this.props.getRecipes();
     }
 
-    componentDidUpdate({
-        prevSelectedIngredients,
-        recipe: {recipes: prevRecipes},
-    }) {
+    componentDidUpdate({prevSelectedIngredients, recipe: {recipes: prevRecipes}}) {
         const {
             selectedIngredients,
-            recipe: {loading: recipeLoading, recipes},
+            recipe: {recipeLoading, recipes},
         } = this.props;
 
         if (recipeLoading || recipes === null) return;
 
-        if (
-            !isEqual(selectedIngredients, prevSelectedIngredients) ||
-            !isEqual(recipes, prevRecipes)
+        if (!isEqual(selectedIngredients, prevSelectedIngredients) || !isEqual(recipes, prevRecipes)
         ) {
             const selectedIngredientIds = selectedIngredients.map(({id}) => id);
             const filteredRecipes = recipes.filter(({Ingredients}) =>
@@ -49,11 +44,7 @@ class RecipeList extends React.Component {
         }
 
         if (recipeLoading || recipes === null) {
-            return <Spinner />;
-        }
-
-        if (filteredRecipes.length === 0) {
-            return <div className="mt-3 mb-2">Рецепты не найдены</div>;
+            return <Spinner/>;
         }
 
         return (
@@ -61,7 +52,7 @@ class RecipeList extends React.Component {
                 <div className="mt-3 mb-2">Подходящие рецепты</div>
                 <div className="recipes">
                     {filteredRecipes.map((recipe) => (
-                        <Recipe key={recipe.id} recipe={recipe} />
+                        <Recipe key={recipe.id} recipe={recipe}/>
                     ))}
                 </div>
             </>

@@ -28,7 +28,7 @@ class Home extends React.Component {
             text: e.target.value,
             filteredIngredients: ingredients.filter(({name}) =>
                 new RegExp(e.target.value.trim(), 'ig').test(name)
-            ),
+            )
         });
     };
 
@@ -43,15 +43,15 @@ class Home extends React.Component {
     render() {
         const {
             ingredient: {
-                loading: ingredientLoading,
+                ingredientLoading,
                 ingredients,
                 selectedIngredients,
-            },
+            }
         } = this.props;
         const {text, filteredIngredients} = this.state;
 
         if (ingredientLoading || ingredients === null) {
-            return <Spinner />;
+            return <Spinner/>;
         }
 
         return (
@@ -92,13 +92,13 @@ class Home extends React.Component {
                         </div>
                     </>
                 )}
-                <RecipeList selectedIngredients={selectedIngredients} />
+                <RecipeList selectedIngredients={selectedIngredients}/>
             </>
         );
     }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
     ingredient: state.ingredient,
 });
 
