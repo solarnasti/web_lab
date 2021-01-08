@@ -19,7 +19,9 @@ class RecipeList extends React.Component {
             recipe: {recipeLoading, recipes},
         } = this.props;
 
-        if (recipeLoading || recipes === null) return;
+        if (recipeLoading || recipes === null) {
+            return;
+        }
 
         if (!isEqual(selectedIngredients, prevSelectedIngredients) || !isEqual(recipes, prevRecipes)
         ) {
