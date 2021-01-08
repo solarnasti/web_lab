@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const Ingredient = require('../../models/Ingredient');
 
-router.get('/', async (_, res) => {
+router.get('/', async (reg, res) => {
     try {
         const ingredients = await Ingredient.find();
 
