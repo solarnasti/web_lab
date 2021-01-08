@@ -21,6 +21,7 @@ class Home extends React.Component {
         this.props.getIngredients();
     }
 
+    //Обработчик событий для ввода текста
     handleTextChange = (e) => {
         const {ingredients} = this.props.ingredient;
 
@@ -55,7 +56,7 @@ class Home extends React.Component {
         }
 
         return (
-            <>
+            <React.Fragment>
                 <Form>
                     <Form.Group controlId="text">
                         <Form.Label>Выберите ингредиенты</Form.Label>
@@ -79,7 +80,7 @@ class Home extends React.Component {
                     )}
                 </div>
                 {selectedIngredients.length !== 0 && (
-                    <>
+                    <React.Fragment>
                         <div className="mt-3 mb-2">Выбранные ингредиенты</div>
                         <div className="ingredient-card">
                             {selectedIngredients.map((ingredient) => (
@@ -90,10 +91,10 @@ class Home extends React.Component {
                                 />
                             ))}
                         </div>
-                    </>
+                    </React.Fragment>
                 )}
                 <RecipeList selectedIngredients={selectedIngredients}/>
-            </>
+            </React.Fragment>
         );
     }
 }

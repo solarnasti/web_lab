@@ -7,7 +7,9 @@ import Recipe from '../components/Recipe';
 import {getRecipes} from '../actions/recipe';
 
 class RecipeList extends React.Component {
-    state = {filteredRecipes: []};
+    state = {
+        filteredRecipes: []
+    };
 
     componentDidMount() {
         this.props.getRecipes();
@@ -20,15 +22,16 @@ class RecipeList extends React.Component {
         } = this.props;
 
         if (recipeLoading || recipes === null) {
-            return;
+            return <Spinner/>;
         }
 
-        if (!isEqual(selectedIngredients, prevSelectedIngredients) || !isEqual(recipes, prevRecipes)
-        ) {
+        if (!isEqual(selectedIngredients, prevSelectedIngredients) || !isEqual(recipes, prevRecipes)) {
             const selectedIngredientIds = selectedIngredients.map(({id}) => id);
-            const filteredRecipes = recipes.filter(({Ingredients}) =>
-                Ingredients.some(({id}) => selectedIngredientIds.includes(id))
+
+            const filteredRecipes = recipes.filter(
+                ({Ingredients}) => Ingredients.some(({id}) => selectedIngredientIds.includes(id))
             );
+
             if (!isEqual(this.state.filteredRecipes, filteredRecipes))
                 this.setState({filteredRecipes});
         }
@@ -37,7 +40,7 @@ class RecipeList extends React.Component {
     render() {
         const {
             selectedIngredients,
-            recipe: {loading: recipeLoading, recipes},
+            recipe: {recipeLoading, recipes},
         } = this.props;
         const {filteredRecipes} = this.state;
 
