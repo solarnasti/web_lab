@@ -40,7 +40,7 @@ class RecipeList extends React.Component {
     render() {
         const {
             selectedIngredients,
-            recipe: {recipeLoading, recipes},
+            recipe: {loading: recipeLoading, recipes},
         } = this.props;
         const {filteredRecipes} = this.state;
 

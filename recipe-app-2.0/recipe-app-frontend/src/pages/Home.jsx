@@ -44,7 +44,7 @@ class Home extends React.Component {
     render() {
         const {
             ingredient: {
-                ingredientLoading,
+                loading: ingredientLoading,
                 ingredients,
                 selectedIngredients,
             }
