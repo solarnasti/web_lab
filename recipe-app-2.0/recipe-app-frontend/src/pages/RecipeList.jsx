@@ -16,10 +16,7 @@ class RecipeList extends React.Component {
     }
 
     componentDidUpdate({prevSelectedIngredients, recipe: {recipes: prevRecipes}}) {
-        const {
-            selectedIngredients,
-            recipe: {recipeLoading, recipes},
-        } = this.props;
+        const {selectedIngredients, recipe: {recipeLoading, recipes},} = this.props;
 
         if (recipeLoading || recipes === null) {
             return <Spinner/>;
@@ -38,10 +35,7 @@ class RecipeList extends React.Component {
     }
 
     render() {
-        const {
-            selectedIngredients,
-            recipe: {loading: recipeLoading, recipes},
-        } = this.props;
+        const {selectedIngredients, recipe: {loading: recipeLoading, recipes}} = this.props;
         const {filteredRecipes} = this.state;
 
         if (selectedIngredients.length === 0) {
