@@ -42,7 +42,7 @@ class Home extends React.Component {
     };
 
     render() {
-        const {ingredient: {loading: ingredientLoading, ingredients, selectedIngredients}} = this.props;
+        const {ingredient: {ingredientLoading, ingredients, selectedIngredients}} = this.props;
         const {text, filteredIngredients} = this.state;
 
         if (ingredientLoading || ingredients === null) {
