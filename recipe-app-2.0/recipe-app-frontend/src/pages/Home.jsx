@@ -42,10 +42,10 @@ class Home extends React.Component {
     };
 
     render() {
-        const {ingredientLoading, ingredients, selectedIngredients} = this.props.ingredient;
+        const {ingredients, selectedIngredients} = this.props.ingredient;
         const {text, filteredIngredients} = this.state;
 
-        if (ingredientLoading || ingredients === null) {
+        if (ingredients === null) {
             return <Spinner/>;
         }
 
@@ -94,11 +94,11 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    ingredient: state.ingredient,
+    ingredient: state.ingredient
 });
 
 export default connect(mapStateToProps, {
     getIngredients,
     addIngredient,
-    removeIngredient,
+    removeIngredient
 })(Home);

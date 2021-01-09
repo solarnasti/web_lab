@@ -1,8 +1,7 @@
-import {GET_RECIPES, SET_RECIPE_LOADING} from '../actions/types';
+import {GET_RECIPES} from '../actions/types';
 
 const initialState = {
-    recipes: null,
-    loading: false,
+    recipes: null
 };
 
 const reducer = (state = initialState, action) => {
@@ -11,12 +10,6 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 recipes: action.payload,
-                loading: false,
-            };
-        case SET_RECIPE_LOADING:
-            return {
-                ...state,
-                loading: action.payload,
             };
         default:
             return state;

@@ -1,14 +1,12 @@
 import {
     GET_INGREDIENTS,
     ADD_INGREDIENT,
-    REMOVE_INGREDIENT,
-    SET_INGREDIENT_LOADING,
+    REMOVE_INGREDIENT
 } from '../actions/types';
 
 const initialState = {
     ingredients: null,
-    selectedIngredients: [],
-    loading: false,
+    selectedIngredients: []
 };
 
 const reducer = (state = initialState, action) => {
@@ -16,8 +14,7 @@ const reducer = (state = initialState, action) => {
         case GET_INGREDIENTS:
             return {
                 ...state,
-                ingredients: action.payload,
-                loading: false,
+                ingredients: action.payload
             };
         case ADD_INGREDIENT:
             const isIngredientAdded = state.selectedIngredients.some(
@@ -25,30 +22,22 @@ const reducer = (state = initialState, action) => {
             );
             if (isIngredientAdded) {
                 return {
-                    ...state,
-                    loading: false,
-                };
+                    ...state
+                }
             }
             const ingredient = state.ingredients.find(
                 ({id}) => id === action.payload
             );
             return {
                 ...state,
-                selectedIngredients: [...state.selectedIngredients, ingredient],
-                loading: false,
+                selectedIngredients: [...state.selectedIngredients, ingredient]
             };
         case REMOVE_INGREDIENT:
             return {
                 ...state,
                 selectedIngredients: state.selectedIngredients.filter(
                     ({id}) => id !== action.payload
-                ),
-                loading: false,
-            };
-        case SET_INGREDIENT_LOADING:
-            return {
-                ...state,
-                loading: action.payload,
+                )
             };
         default:
             return state;

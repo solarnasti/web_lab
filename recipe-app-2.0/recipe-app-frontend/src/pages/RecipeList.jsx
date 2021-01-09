@@ -2,7 +2,6 @@ import React from 'react';
 import {isEqual} from 'lodash';
 import {connect} from 'react-redux';
 
-import Spinner from '../components/Spinner';
 import Recipe from '../components/Recipe';
 import {getRecipes} from '../actions/recipe';
 
@@ -17,11 +16,7 @@ class RecipeList extends React.Component {
 
     componentDidUpdate({prevSelectedIngredients, prevRecipes}) {
         const {selectedIngredients} = this.props;
-        const {recipeLoading, recipes} = this.props.recipe;
-
-        if (recipeLoading || recipes === null) {
-            return <Spinner/>;
-        }
+        const {recipes} = this.props.recipe;
 
         if (!isEqual(selectedIngredients, prevSelectedIngredients) || !isEqual(recipes, prevRecipes)) {
             const selectedIngredientIds = selectedIngredients.map(({id}) => id);
@@ -37,32 +32,27 @@ class RecipeList extends React.Component {
 
     render() {
         const {selectedIngredients} = this.props;
-        const {recipeLoading, recipes} = this.props.recipe;
         const {filteredRecipes} = this.state;
 
         if (selectedIngredients.length === 0) {
             return null;
         }
 
-        if (recipeLoading || recipes === null) {
-            return <Spinner/>;
-        }
-
         return (
-            <>
+            <React.Fragment>
                 <div className="mt-3 mb-2">Подходящие рецепты</div>
                 <div className="recipes">
                     {filteredRecipes.map((recipe) => (
                         <Recipe key={recipe.id} recipe={recipe}/>
                     ))}
                 </div>
-            </>
+            </React.Fragment>
         );
     }
 }
 
 const mapStateToProps = (state) => ({
-    recipe: state.recipe,
+    recipe: state.recipe
 });
 
 export default connect(mapStateToProps, {getRecipes})(RecipeList);
