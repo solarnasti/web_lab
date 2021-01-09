@@ -4,11 +4,8 @@ import Button from 'react-bootstrap/Button';
 
 class Ingredient extends React.Component {
     render() {
-        const {
-            ingredient: {id, name, enName},
-            onSelect,
-            onRemove,
-        } = this.props;
+        const {id, name, enName} = this.props.ingredient;
+        const {onSelect, onRemove} = this.props;
 
         return (
             <Card

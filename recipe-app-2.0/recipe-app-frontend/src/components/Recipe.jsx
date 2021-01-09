@@ -3,9 +3,7 @@ import Card from 'react-bootstrap/Card';
 
 class Recipe extends React.Component {
     render() {
-        const {
-            recipe: {name, enName, Ingredients},
-        } = this.props;
+        const {name, enName, Ingredients} = this.props.recipe;
 
         return (
             <Card className="recipe-card mb-3">
