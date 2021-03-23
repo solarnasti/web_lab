@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {useAppDispatch, useAppSelector} from '../../hooks';
-import {changeLogin, changePassword, loginUser} from './@slice';
+import {enterLogin, enterPassword, loginUser} from './@slice';
 import {Form, Button} from "react-bootstrap";
 
 const LoginForm: React.FC = () => {
@@ -15,21 +15,21 @@ const LoginForm: React.FC = () => {
             <h3 className="font-weight-bold text-center ">Sign in!</h3>
             <Form>
                 <Form.Group controlId="formBasicLogin">
-                    <Form.Label>Login</Form.Label>
+                    <Form.Label>Login:</Form.Label>
                     <Form.Control
                         id="username"
                         placeholder="Login"
-                        onChange={(event) => dispatch(changeLogin(event.target.value))}
+                        onChange={(event) => dispatch(enterLogin(event.target.value))}
                         value={login}
                     />
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>Password:</Form.Label>
                     <Form.Control
                         id="password"
                         placeholder="Password"
-                        onChange={(event) => dispatch(changePassword(event.target.value))}
+                        onChange={(event) => dispatch(enterPassword(event.target.value))}
                         value={password}
                     />
                 </Form.Group>

@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "moduleResolution": "node",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
@@ -14,11 +13,4 @@
     "incremental": true,
     "jsx": "react"
   },
-  "include": [
-    "./src"
-  ],
-  "exclude": [
-    "node_modules",
-    "build"
-  ]
 }

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
-import Routes from "./routes";
 import {Login} from "./Login";
 import {Home} from "./Home";
 import {NotFound} from "./NotFound";
 import {SignUp} from "./SignUp";
+import Routes from "./routes";
 
 export const Router: React.FC = () => {
     return(

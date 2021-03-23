@@ -3,7 +3,7 @@ const app = express();
 const PORT = 5000;
 const initDatabase = require('./sequelize/db');
 
-initDatabase();
+//initDatabase();
 
 app.use('/api/ingredients', require('./routes/ingredients'));
 app.use('/api/recipes', require('./routes/recipes'));

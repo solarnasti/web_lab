@@ -2,6 +2,7 @@ import {createBrowserHistory} from "history";
 import {configureStore, getDefaultMiddleware} from "@reduxjs/toolkit";
 import {connectRouter} from "connected-react-router";
 import loginFormReducer from './components/LoginForm/@slice';
+import signUpFormReducer from './components/SignUpForm/@slice';
 
 export const history = createBrowserHistory();
 
@@ -10,7 +11,7 @@ const middleware = getDefaultMiddleware({thunk: true})
 const reducer = {
     router: connectRouter(history),
     loginForm: loginFormReducer,
-    // auth:
+    signUpForm: signUpFormReducer
 }
 
 export const store = configureStore({
