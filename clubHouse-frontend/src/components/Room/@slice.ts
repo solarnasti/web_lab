@@ -1,11 +1,10 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {Response} from "../SignUpForm/@slice";
 import {AppDispatch} from "../../store";
+import {SignUpFormSlice} from "../SignUpForm/@slice";
 
 export interface RoomState {
     createRoomState: [];
     joinRoomState: [];
-    users: [],
     username: string;
     loading: 'idle' | 'pending' | 'succeeded' | 'failed'
 }
@@ -13,7 +12,6 @@ export interface RoomState {
 const initialState: RoomState = {
     createRoomState: [],
     joinRoomState: [],
-    users: [],
     username: '',
     loading: 'idle'
 }
@@ -72,3 +70,9 @@ export const RoomSlice = createSlice({
             })
     }
 })
+
+export const {
+    setUsername
+} = RoomSlice.actions;
+//остальные?
+export default RoomSlice.reducer

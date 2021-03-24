@@ -35,7 +35,7 @@ const LoginForm: React.FC = () => {
                 </Form.Group>
                 <Button className="color-primary" type="submit"
                         onClick={() => dispatch(loginUser({login, password}))}>
-                    Submit
+                    Enter Room
                 </Button>
             </Form>
         </div>
