@@ -7,7 +7,7 @@ const LoginForm: React.FC = () => {
     const login = useAppSelector(state => state.loginForm.login);
     const password = useAppSelector(state => state.loginForm.password);
     const status = useAppSelector(state => state.loginForm.loading)
-        //<div>{status}</div>
+    //<div>{status}</div>
     const dispatch = useAppDispatch();
 
     return (

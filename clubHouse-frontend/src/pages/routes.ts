@@ -1,6 +1,6 @@
 enum Routes {
     LOGIN = '/login',
     SIGNUP = '/signup',
-    CHATROOM ='/room'
+    ENTERROOM ='/room'
 }
 export default Routes;

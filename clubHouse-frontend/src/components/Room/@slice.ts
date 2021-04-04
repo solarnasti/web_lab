@@ -1,23 +1,19 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {AppDispatch} from "../../store";
-import {SignUpFormSlice} from "../SignUpForm/@slice";
 
 export interface RoomState {
     createRoomState: [];
     joinRoomState: [];
-    username: string;
     loading: 'idle' | 'pending' | 'succeeded' | 'failed'
 }
 
 const initialState: RoomState = {
     createRoomState: [],
     joinRoomState: [],
-    username: '',
     loading: 'idle'
 }
 
-export const createRoom = createAsyncThunk<Response, { dispatch: AppDispatch, state: RoomState["createRoomState"] }>
-('room/createByName', async (roomName, thunkAPI) => {
+export const createRoom = createAsyncThunk
+('room/createByName', async (roomName: string, thunkAPI) => {
     const postOptions = {
         method: 'GET',
     };
@@ -25,11 +21,8 @@ export const createRoom = createAsyncThunk<Response, { dispatch: AppDispatch, st
     return (await response.json()) as Response;
 })
 
-//dispatch response?
-//const createRoomAction = await store.dispatch(createRoom(roomName))
-
-export const joinRoom = createAsyncThunk<Response, { dispatch: AppDispatch, state: RoomState["joinRoomState"] }>
-('room/joinByID', async (roomId, thunkAPI) => {
+export const joinRoom = createAsyncThunk
+('room/joinByID', async (roomId: string, thunkAPI) => {
     const postOptions = {
         method: 'GET',
     };
@@ -37,22 +30,17 @@ export const joinRoom = createAsyncThunk<Response, { dispatch: AppDispatch, stat
     return (await response.json()) as Response;
 })
 
-//const joinRoomAction = await store.dispatch(joinRoom(roomId))
-
 export const RoomSlice = createSlice({
     name: 'room',
     initialState,
     reducers: {
-        createRoom: (state, action) => {
+        createRoom: (state, action: PayloadAction<any>) => {
             state.createRoomState = action.payload.createRoomState;
             state.loading = 'succeeded';
         },
-        joinRoom: (state, action) => {
+        joinRoom: (state, action: PayloadAction<any>) => {
             state.joinRoomState = action.payload.joinRoomState;
             state.loading = 'succeeded';
-        },
-        setUsername: (state, action: PayloadAction<string>) => {
-            state.username = action.payload
         }
     },
     extraReducers: builder => {
@@ -71,8 +59,4 @@ export const RoomSlice = createSlice({
     }
 })
 
-export const {
-    setUsername
-} = RoomSlice.actions;
-//остальные?
 export default RoomSlice.reducer
